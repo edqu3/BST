@@ -1,18 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package BinarySearchTreeDriver;
 
 public class BinarySearchTreeDriver {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        BST b = new BST();
+
+        System.out.println("====================================");
+        b.showLNR();
+        System.out.println("====================================");
+
+        System.out.println("====================================");        
+        b.showRNL();
+        System.out.println("====================================");
         
-        
+        System.out.println("====================================");
+        b.showNLR();
+        System.out.println("====================================");
+                
+        b.showArray();
     }
 }

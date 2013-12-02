@@ -5,35 +5,59 @@ package BinarySearchTreeDriver;
  */
 public class BST {
 
-    public Data[] tna = new Data[20];
+    private StudentListing[] tna = new StudentListing[20];
     private static int result = -1;
 
     public BST() {
-        //Level 0
-        this.tna[0] = new Data("e");
+        //Level 0   root
+        this.tna[0] = new StudentListing("m");
         //Level 1
-        this.tna[1] = new Data("c");
-        this.tna[2] = new Data("h");
+        this.tna[1] = new StudentListing("f");
+        this.tna[2] = new StudentListing("q");
         //Level 2        
-        this.tna[3] = new Data("a");
-        this.tna[4] = new Data("d");
-        this.tna[5] = new Data("f");
-        this.tna[6] = new Data("j");
+        this.tna[3] = new StudentListing("c");
+        this.tna[4] = new StudentListing("h");
+        this.tna[5] = new StudentListing("o");
+        this.tna[6] = new StudentListing("v");
         //Level 3
-
+        this.tna[7] = new StudentListing("b");
+        this.tna[8] = new StudentListing("d");
+        this.tna[9] = new StudentListing("g");
+        this.tna[10] = new StudentListing("k");
+        this.tna[11] = new StudentListing("n");
+        this.tna[12] = new StudentListing("t");
+        this.tna[13] = new StudentListing("u");
+        this.tna[14] = new StudentListing("z");
+        /*
+        this.tna[15] = new StudentListing("");
+        this.tna[16] = new StudentListing("");
+        this.tna[17] = new StudentListing("");
+        this.tna[18] = new StudentListing("");
+        this.tna[19] = new StudentListing("");
+        */
     }
 
+    public void showLNR(){
+        outputLNR(0);
+    }
+    public void showRNL(){
+        outputRNL(0);
+    }
+    public void showNLR(){
+        outputNLR(0);
+    }
+    
     /**
      * Output in Ascending order a c d e f h j
      *
      * @param i
      */
-    public void outputLNR(int i) {
-        if (i > tna.length - 1) {
+    private void outputLNR(int i) {
+        if (i > tna.length - 1 ) {
             return;
         }
         outputLNR(2 * i + 1);
-        System.out.println(tna[i].getKey());
+        if ( tna[i]!=null ) System.out.println(tna[i].getKey());
         outputLNR(2 * i + 2);
     }
 
@@ -42,20 +66,20 @@ public class BST {
      *
      * @param i
      */
-    public void outputRNL(int i) {
+    private void outputRNL(int i) {
         if (i > tna.length - 1) {
             return;
         }
         outputRNL(2 * i + 2);
-        System.out.println(tna[i].getKey());
+        if ( tna[i]!=null ) System.out.println(tna[i].getKey());
         outputRNL(2 * i + 1);
     }
 
-    public void outputNLR(int i) {
+    private void outputNLR(int i) {
         if (i > tna.length - 1) {
             return;
         }
-        System.out.println(tna[i].getKey());
+        if ( tna[i]!=null ) System.out.println(tna[i].getKey());
         outputNLR(2 * i + 1);
         outputNLR(2 * i + 2);
     }
@@ -85,7 +109,7 @@ public class BST {
      * @param t
      * @return
      */
-    public boolean insert(Data t) {
+    public boolean insert(StudentListing t) {
         //Parent = 0  ->  Child = t
         if (tna[0] == null) {
             tna[0] = t;
@@ -104,7 +128,7 @@ public class BST {
         }
     }
 
-    public boolean insert2(Data t) {
+    public boolean insert2(StudentListing t) {
         if (tna[0] == null) {
             tna[0] = t;
             return true;
